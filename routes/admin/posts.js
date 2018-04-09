@@ -8,7 +8,7 @@ const {userAuthenticated} = require('../../helpers/authentication');
 const Comment = require('../../models/Comment');
 
 
-router.all('/*', (req, res, next)=>{
+router.all('/*', userAuthenticated, (req, res, next)=>{
 
 
     req.app.locals.layout = 'admin';
