@@ -1,30 +1,31 @@
 {
   "name": "cms",
-  "version": "1.0.1",
-  "description": "A CMS in NODE.js",
+  "version": "1.0.0",
+  "description": "a CMS in node.js",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "CMS"
   ],
-  "author": "Edwin Diaz",
+  "author": "Mahesh Shetty",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "body-parser": "^1.18.2",
+    "body-parser": "^1.19.0",
     "connect-flash": "^0.1.1",
-    "express": "^4.16.2",
-    "express-fileupload": "^0.3.0",
-    "express-handlebars": "^3.0.0",
-    "express-session": "^1.15.6",
-    "faker": "^4.1.0",
-    "method-override": "^2.3.10",
-    "moment": "^2.20.1",
-    "mongoose": "^5.0.14",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.2.0",
+    "express-handlebars": "^5.2.0",
+    "express-session": "^1.17.1",
+    "faker": "^5.1.0",
+    "method-override": "^3.0.0",
+    "moment": "^2.29.1",
+    "mongoose": "^5.10.16",
     "mongoose-url-slugs": "^1.0.2",
-    "passport": "^0.4.0",
+    "nodemon": "^2.0.7",
+    "passport": "^0.4.1",
     "passport-local": "^1.0.0"
   }
 }

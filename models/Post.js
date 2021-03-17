@@ -1,101 +1,55 @@
+const { date } = require('faker');
 const mongoose = require('mongoose');
-
-const URLSlugs = require('mongoose-url-slugs');
-
-
-const Schema  = mongoose.Schema;
-
+const URLSlug = require('mongoose-url-slugs');
+const Schema = mongoose.Schema;
 
 const PostSchema = new Schema({
-
-
-   user: {
-
-       type: Schema.Types.ObjectId,
-       ref:'users'
-
-   },
-
-
-
-    category: {
-
-        type: Schema.Types.ObjectId,
-        ref: 'categories'
-
+    user:{
+        type:Schema.Types.ObjectId,
+        ref:'users'
     },
-
-
-    title:{
-
+    title: {
         type: String,
         required: true
-
     },
-
-    slug: {
-
-        type: String
-
-
+    slug:{
+        type:String
     },
-
-
-    status:{
-
+    status: {
         type: String,
-        default: 'public'
-
+        default: 'Public'
     },
 
-
-    allowComments:{
-
+    allowComments: {
         type: Boolean,
-        require: true
-
+        required: true
     },
 
-
-    body:{
-
+    body: {
         type: String,
-        require: true
-
+        required: true
     },
 
-
-    file:{
-
-        type: String,
-
-
+    file: {
+        type: String
     },
 
-    date: {
-
+    date:{
         type: Date,
         default: Date.now()
-
     },
 
+    category:{
+        type: Schema.Types.ObjectId,
+        ref: 'categories'
+    },
 
-
-    comments: [{
-
+    comments:[{
         type: Schema.Types.ObjectId,
         ref: 'comments'
-
-
     }]
 
 
-
-
-
-
-}, {usePushEach: true});
-
-PostSchema.plugin(URLSlugs('title', {field: 'slug'}));
-
-module.exports = mongoose.model('posts', PostSchema);
+});
+PostSchema.plugin(URLSlug('title',{field:'slug'}));
+module.exports = mongoose.model('posts',PostSchema);

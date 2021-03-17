@@ -1,60 +1,29 @@
+const { date } = require('faker');
 const mongoose = require('mongoose');
-const Schema  = mongoose.Schema;
+const Schema = mongoose.Schema;
 
-
-const UserSchema = new Schema({
-
-
-    firstName:{
-
+const userSchema = new Schema({
+    
+    firstName: {
         type: String,
         required: true
-
     },
 
-
-    lastName:{
-
+    lastName: {
         type: String,
         required: true
-
     },
 
-
-
-
-    email:{
-
+    email: {
         type: String,
         required: true
-
     },
 
-
-
-
-    password:{
-
+    password: {
         type: String,
         required: true
-
     },
-
-
-
-
 
 });
 
-
-
-UserSchema.methods.testMethod = function(){
-
-
-
-
-};
-
-
-
-module.exports = mongoose.model('users', UserSchema);
+module.exports = mongoose.model('users',userSchema);
