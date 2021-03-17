@@ -81,8 +81,8 @@ app.use('/admin/comments', comments);
 
 //PASSPORT Configs for user Authentication
 
+const port = process.env.PORT || 4112;
 
-
-app.listen(4112, () => {
+app.listen(port, () => {
     console.log('listening on 4112');
 });
