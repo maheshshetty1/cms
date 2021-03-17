@@ -46,7 +46,7 @@ router.post('/', (req, res) => {
         post.save().then(() => {
             newComment.save();
             req.flash('success_message', 'your comment will be reviewed shortly');
-            res.redirect(`/post/${post._id}`);
+            res.redirect(`/post/${post.slug}`);
         });
 
     }).catch(err => {
