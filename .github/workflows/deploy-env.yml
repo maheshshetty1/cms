@@ -15,5 +15,6 @@ jobs:
       name: DEV
       url: https://github.com
     steps:
-      -name: step1
-      -run: echo hello world
+      - uses: actions/checkout@v2
+      - name: deploy
+      - run: echo "hello"
